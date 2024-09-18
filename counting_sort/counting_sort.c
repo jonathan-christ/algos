@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "counting_sort.h"
 #include "../utils.c"
 
