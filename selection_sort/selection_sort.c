@@ -10,19 +10,20 @@ int main()
 
 Cell *selectionSort(Cell arr[], int size)
 {
-  int maxKey = 0, cellSize = size * sizeof(Cell);
+  int minKey, cellSize = size * sizeof(Cell);
   Cell *output = (Cell *)malloc(cellSize);
   memcpy(output, data, cellSize);
 
   for (int i = 0; i < size; i++)
   {
-    // find max
-    for (int j = i + 1; j < size-i; j++)
+    // find min
+    minKey = i;
+    for (int j = i + 1; j < size; j++)
     {
-      if (output[maxKey].value > output[j].value)
-        maxKey = j;
+      if (output[minKey].value > output[j].value)
+        minKey = j;
     }
-    swap(&output[maxKey], &output[i]);
+    swap(&output[minKey], &output[i]);
   }
 
   return output;
