@@ -1,36 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-// Counting sort
-#define MAX_NAME_LEN 20
-#define MAX_ARR_LEN 8
-
-typedef struct {
-	char name[MAX_NAME_LEN];
-	int value;
-} Cell;
-
-int *countingSortW3(Cell [], int);
-Cell *countingSortRange(Cell [], int);
-
-void printCellArr(Cell [], int);
-void printIntArr(int [], int);
+#include "counting_sort.h"
+#include "../utils.c"
 
 int main () {
-	int *intOutput;
-	Cell *cellOutput, input[] = {
-	{"De Jesus",2},
-	{"Bonghanoy",5},
-	{"Buenavista",3},
-	{"Calaycay",0},
-	{"Ventura",2},
-	{"Modesto",3},
-	{"Tiu",0},
-	{"Sobrecaray",3}};
 	
-	intOutput = countingSortW3(input, MAX_ARR_LEN);
+	intOutput = countingSortW3(data, MAX_ARR_LEN);
 	printIntArr(intOutput, MAX_ARR_LEN);
 	
-	cellOutput = countingSortRange(input, MAX_ARR_LEN);
+	cellOutput = countingSortRange(data, MAX_ARR_LEN);
 	printCellArr(cellOutput, MAX_ARR_LEN);
 }
 
@@ -90,23 +68,6 @@ Cell *countingSortRange(Cell arr[], int size){
 	}
 	
 	return output;
-}
-
-
-void printCellArr(Cell arr[], int size){
-	printf("OUTPUT:\n");
-	for(int i=0; i<size; i++){
-		printf("%20s | %d\n",arr[i].name, arr[i].value);
-	}	
-	printf("\n\n");
-}
-
-void printIntArr(int arr[], int size){
-	printf("OUTPUT: { ");
-	for(int i=0; i<size; i++){
-		printf("%d%c ", arr[i], i==size-1? ' ':',');
-	}
-	printf("}\n\n");
 }
 
 
