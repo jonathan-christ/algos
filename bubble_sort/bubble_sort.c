@@ -16,7 +16,7 @@ Cell *bubbleSort(Cell arr[], int size)
 
   for (int j = 0; j < size; j++)
   {
-    for (int i = 1; i < size; i++)
+    for (int i = 1; i < size - j; i++)
     {
       if (output[i - 1].value > output[i].value)
       {
