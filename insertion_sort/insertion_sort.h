@@ -3,6 +3,5 @@
 #include "../utils.h"
 
 Cell *insertionSort(Cell [], int);
-void swap(Cell *, Cell *);
 
 #endif

@@ -11,22 +11,17 @@ int main()
 Cell *insertionSort(Cell arr[], int size)
 {
   int cellSize = size * sizeof(Cell);
-  Cell *output = (Cell *)malloc(cellSize);
+  Cell temp, *output = (Cell *)malloc(cellSize);
   memcpy(output, arr, cellSize);
 
-  for (int i = 1; i < size; i++)
+  for (int i = 1, j; i < size; i++)
   {
-    for (int j = i - 1; j >= 0 && output[j].value > output[j + 1].value; j--)
+    temp = output[i];
+    for (j = i; j >= 0 && output[j - 1].value > temp.value; j--)
     {
-      swap(&output[j + 1], &output[j]);
+      output[j] = output[j - 1];
     }
+    output[j] = temp;
   }
   return output;
-}
-
-void swap(Cell *A, Cell *B)
-{
-  Cell temp = *A;
-  *A = *B;
-  *B = temp;
 }
