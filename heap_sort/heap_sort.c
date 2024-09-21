@@ -12,8 +12,11 @@ int main()
     H.arr = cellOutput;
     H.size = MAX_ARR_LEN;
 
-    minHeapify(&H);
-    heapSort(&H);
+    // minHeapify(&H);
+    // minHeapSort(&H);
+    maxHeapify(&H);
+    maxHeapSort(&H);
+
     printCellArr(H.arr, H.size);
     free(cellOutput);
   }
@@ -64,7 +67,8 @@ void minHeapify(Heap *H)
   }
 }
 
-Cell deleteMin(Heap *H)
+// highest to lowest
+void deleteMin(Heap *H)
 {
   Cell temp = H->arr[0];
   H->arr[0] = H->arr[H->size - 1];
@@ -72,12 +76,71 @@ Cell deleteMin(Heap *H)
   minHeapify(H);
 }
 
-void heapSort(Heap *H)
+void minHeapSort(Heap *H)
 {
   int prevSize = H->size;
   for (int idx = H->size; idx > 0; idx--)
   {
     deleteMin(H);
+  }
+
+  H->size = prevSize;
+}
+
+void maxHeapify(Heap *H)
+{
+  Cell temp;
+  int LC, RC, largestIdx, currIdx, loopFlag;
+  for (int idx = H->size - 1; idx >= 0; idx--)
+  {
+    currIdx = idx;
+    loopFlag = 1;
+    while (loopFlag)
+    {
+      largestIdx = currIdx;
+      LC = idx * 2 + 1;
+      RC = LC + 1;
+
+      // not out of bounds and child is greater than parent
+      if (LC < H->size && H->arr[LC].value > H->arr[currIdx].value)
+      {
+        largestIdx = LC;
+      }
+
+      if (RC < H->size && H->arr[RC].value > H->arr[largestIdx].value)
+      {
+        largestIdx = RC;
+      }
+
+      if (largestIdx != currIdx)
+      {
+        temp = H->arr[currIdx];
+        H->arr[currIdx] = H->arr[largestIdx];
+        H->arr[largestIdx] = temp;
+        loopFlag = 1;
+      }
+      else
+      {
+        loopFlag = 0;
+      }
+    }
+  }
+}
+
+void deleteMax(Heap *H)
+{
+  Cell temp = H->arr[0];
+  H->arr[0] = H->arr[H->size - 1];
+  H->arr[H->size-- - 1] = temp;
+  maxHeapify(H);
+}
+
+void maxHeapSort(Heap *H)
+{
+  int prevSize = H->size;
+  for (int idx = H->size; idx > 0; idx--)
+  {
+    deleteMax(H);
   }
 
   H->size = prevSize;

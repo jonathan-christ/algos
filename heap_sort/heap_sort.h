@@ -11,8 +11,9 @@ typedef struct
 void minHeapify(Heap *);
 void maxHeapify(Heap *);
 
-Cell deleteMin(Heap *);
-Cell deleteMax(Heap *);
-void heapSort(Heap *);
+void deleteMin(Heap *);
+void deleteMax(Heap *);
 
+void minHeapSort(Heap *);
+void maxHeapSort(Heap *);
 #endif
