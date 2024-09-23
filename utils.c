@@ -14,14 +14,17 @@ Cell data[] = {
     {"Sobrecaray", 3}};
 
 Cell dataALT[] = {
-    {"Calaycay", 6},
-    {"De Jesus", 1},
-    {"Bonghanoy", 2},
-    {"Buenavista", 1},
-    {"Ventura", 0},
-    {"Modesto", 2},
-    {"Tiu", 4},
-    {"Sobrecaray", 4}};
+    {"Sanchez", 6},
+    {"Manalili", 1},
+    {"Duran", 2},
+    {"Pumar", 1},
+    {"Manlangit", 0},
+    {"Lim", 2},
+    {"Singh", 4},
+    {"Go", 4}};
+
+int intData[] = {0, 2, 5, 3, 2, 3, 0, 3};
+int intDataALT[] = {6, 1, 2, 1, 0, 2, 4, 4};
 
 void printCellArr(Cell arr[], int size)
 {
@@ -38,7 +41,7 @@ void printIntArr(int arr[], int size)
     printf("OUTPUT: { ");
     for (int i = 0; i < size; i++)
     {
-        printf("%d%c ", arr[i], i == size - 1 ? ' ' : ',');
+        printf("%d%s", arr[i], i == size - 1 ? " " : ", ");
     }
     printf("}\n\n");
 }
