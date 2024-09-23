@@ -13,6 +13,16 @@ Cell data[] = {
     {"Tiu", 0},
     {"Sobrecaray", 3}};
 
+Cell dataALT[] = {
+    {"Calaycay", 6},
+    {"De Jesus", 1},
+    {"Bonghanoy", 2},
+    {"Buenavista", 1},
+    {"Ventura", 0},
+    {"Modesto", 2},
+    {"Tiu", 4},
+    {"Sobrecaray", 4}};
+
 void printCellArr(Cell arr[], int size)
 {
     printf("OUTPUT:\n");
