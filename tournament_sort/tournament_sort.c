@@ -20,7 +20,6 @@ int main()
 void indexTournamentSort(int arr[], int size)
 {
   int heapSize = size * 2 - 1, startIdx = heapSize - 1, RC, LC;
-  char firstWinFlag = 0;
   int heap[heapSize];
   // fill in heap
   for (int i = size - 1, j = startIdx; j >= 0; j--)
@@ -45,14 +44,10 @@ void indexTournamentSort(int arr[], int size)
         heap[j] = heap[LC] < heap[RC] ? LC : RC;
       }
 
-      j = (firstWinFlag && j != 0) ? (j - 1) / 2 : j - 1;
+      j = (i>0 && j != 0) ? (j - 1) / 2 : j - 1;
     }
     startIdx = heap[0];
     arr[i] = heap[startIdx];
     heap[startIdx] = INT_MAX;
-    if (!firstWinFlag)
-    {
-      firstWinFlag = 1;
-    }
   }
 }
