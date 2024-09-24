@@ -19,8 +19,8 @@ int main()
 
 void indexTournamentSort(int arr[], int size)
 {
-  int heapSize = size * 2 - 1, startIdx = heapSize - 1, RC, LC, left, right;
-  int heap[heapSize];
+  int heapSize = size * 2 - 1, startIdx = heapSize - 1;
+  int RC, LC, heap[heapSize];
   // fill in heap
   for (int i = size - 1, j = startIdx; j >= 0; j--)
   {
@@ -36,10 +36,10 @@ void indexTournamentSort(int arr[], int size)
 
       // assignment check
       // check if LEFT CHILD is index or value
-      left = LC < heapSize - size ? heap[LC] : LC;
-      right = RC < heapSize - size ? heap[RC] : RC;
+      LC = LC < heapSize - size ? heap[LC] : LC;
+      RC = RC < heapSize - size ? heap[RC] : RC;
 
-      heap[j] = heap[left] < heap[right] ? left: right; 
+      heap[j] = heap[LC] < heap[RC] ? LC: RC; 
 
 
       j = (i > 0 && j != 0) ? (j - 1) / 2 : j - 1;
