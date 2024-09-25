@@ -115,7 +115,7 @@ void tournament(int arr[], int size)
 			LC = LC < heapSize - size ? heap[LC] : LC;
 			RC = RC < heapSize - size ? heap[RC] : RC;
 
-			heap[j] = heap[LC] < heap[RC] ? LC : RC;
+			heap[j] = heap[RC] < heap[LC] ? RC : LC;
 
 			j = (i > 0 && j != 0) ? (j - 1) / 2 : j - 1;
 		}
