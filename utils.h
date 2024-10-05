@@ -10,7 +10,13 @@ typedef struct
     int value;
 } Cell;
 
-void printCellArr(Cell [], int);
-void printIntArr(int [], int);
+typedef struct node
+{
+    int value;
+    struct node *next;
+} *Node;
+
+void printCellArr(Cell[], int);
+void printIntArr(int[], int);
 
 #endif
