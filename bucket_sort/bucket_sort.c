@@ -29,12 +29,12 @@ void bucketSort(Cell arr[], int size)
     if (arr[i].value < min)
       min = arr[i].value;
   }
-  range = max - min;
+  range = max - min + 1;
 
   // int bucket number
   // reporters' orig formula is ideally for large datasets
   // if the range is too small, there would be 0 buckets, so the tweak is as follows
-  bucketSize = (range < size) ? size : range / size; 
+  bucketSize = (range < size) ? size : range / size;
   buckets = (Bucket *)malloc(sizeof(Bucket) * bucketSize);
   for (i = 0; i < bucketSize; i++)
   {
@@ -45,7 +45,7 @@ void bucketSort(Cell arr[], int size)
   for (i = 0; i < size; i++)
   {
     // idx = (elem-min)*bucketSize / (range+1)
-    idx = arr[i].value - min * bucketSize / (max - min + 1);
+    idx = arr[i].value - min * bucketSize / (range);
 
     // insert sorted
     for (trav = &buckets[idx]; *trav != NULL && (*trav)->element.value < arr[i].value; trav = &(*trav)->next)
