@@ -60,6 +60,5 @@ void radixSort(Cell arr[], int size)
   for (place = 1; max / place > 0; place *= 10)
   {
     countingSort(arr, size, place);
-    printCellArr(arr, size);
   }
 }
