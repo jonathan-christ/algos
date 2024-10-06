@@ -4,8 +4,8 @@
 #include "utils.h"
 
 Cell data[] = {
-    {"Calaycay", 0},
     {"De Jesus", 2},
+    {"Calaycay", 0},
     {"Bonghanoy", 5},
     {"Buenavista", 3},
     {"Ventura", 2},
