@@ -14,17 +14,17 @@ Cell data[] = {
     {"Sobrecaray", 3}};
 
 Cell dataALT[] = {
-    {"Sanchez", 6},
-    {"Manalili", 1},
-    {"Duran", 2},
+    {"Sanchez", 632},
+    {"Manalili", 12},
+    {"Duran", 23},
     {"Pumar", 1},
-    {"Manlangit", 0},
-    {"Lim", 2},
+    {"Manlangit", 100},
+    {"Lim", 72},
     {"Singh", 4},
-    {"Go", 4}};
+    {"Go", 455}};
 
 int intData[] = {0, 2, 5, 3, 2, 3, 0, 3};
-int intDataALT[] = {6, 1, 2, 1, 0, 2, 4, 4};
+int intDataALT[] = {632, 12, 23, 1, 100, 72, 4, 455};
 
 void printCellArr(Cell arr[], int size)
 {
