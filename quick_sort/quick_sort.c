@@ -75,9 +75,12 @@ int partitionHoare(Cell arr[], int start, int end)
     }
 
     // swap if inversion is found
-    temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
+    if (i < j)
+    {
+      temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
   }
 
   return i;
