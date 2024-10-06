@@ -17,6 +17,7 @@ int main()
   }
 }
 
+// PROXMAP VERSION
 void bucketSort(Cell arr[], int size)
 {
   int i, j, idx, max = arr[0].value, min = max, range, bucketSize;
@@ -45,7 +46,7 @@ void bucketSort(Cell arr[], int size)
   for (i = 0; i < size; i++)
   {
     // idx = (elem-min)*bucketSize / (range+1)
-    idx = arr[i].value - min * bucketSize / (range);
+    idx = ((arr[i].value - min) * bucketSize) / (range);
 
     // insert sorted
     for (trav = &buckets[idx]; *trav != NULL && (*trav)->element.value < arr[i].value; trav = &(*trav)->next)
