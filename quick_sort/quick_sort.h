@@ -4,5 +4,6 @@
 
 void quickSort(Cell[], int, int);
 int partition(Cell[], int, int);
+int partitionHoare(Cell[], int, int);
 
 #endif
