@@ -37,14 +37,7 @@ void merge(Cell arr[], int start, int middle, int end)
   // merge the bros
   for (i = 0, j = 0, k = start; i < leftSize && j < rightSize; k++)
   {
-    if (left[i].value <= right[j].value)
-    {
-      arr[k] = left[i++];
-    }
-    else
-    {
-      arr[k] = right[j++];
-    }
+    arr[k] = (left[i].value <= right[j].value) ? left[i++] : right[j++];
   }
 
   // fill remaining
@@ -57,6 +50,9 @@ void merge(Cell arr[], int start, int middle, int end)
   {
     arr[k] = right[j];
   }
+
+  free(left);
+  free(right);
 }
 
 void mergeSort(Cell arr[], int start, int end)
