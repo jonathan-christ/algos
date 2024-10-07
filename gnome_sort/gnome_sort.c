@@ -19,11 +19,12 @@ int main()
 
 void gnomeSort(Cell arr[], int size)
 {
-  int i = 1;
+  int i = 0;
   Cell temp;
   while (i < size)
   {
-    if (i!=0 && arr[i].value < arr[i - 1].value)
+    printf("i = %d\n", i);
+    if (i != 0 && arr[i].value < arr[i - 1].value)
     {
       temp = arr[i];
       arr[i] = arr[i - 1];
@@ -34,5 +35,6 @@ void gnomeSort(Cell arr[], int size)
     {
       i++;
     }
+    printCellIteration(arr, size);
   }
 }
