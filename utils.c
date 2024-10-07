@@ -46,5 +46,23 @@ void printIntArr(int arr[], int size)
     printf("}\n\n");
 }
 
+void printCellIteration(Cell arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i].value);
+    }
+    printf("\n\n");
+}
+
+void printIntIteration(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n\n");
+}
+
 int *intOutput;
 Cell *cellOutput;

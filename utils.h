@@ -19,4 +19,7 @@ typedef struct node
 void printCellArr(Cell[], int);
 void printIntArr(int[], int);
 
+void printCellIteration(Cell [], int);
+void printIntIteration(int [], int);
+
 #endif
