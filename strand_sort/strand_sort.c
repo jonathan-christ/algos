@@ -7,7 +7,7 @@ int main()
   cellOutput = (Cell *)malloc(MAX_ARR_LEN * sizeof(Cell));
   if (cellOutput != NULL)
   {
-    strandSort(dataALT, cellOutput, &size);
+    strandSort(data, cellOutput, &size);
     printCellArr(cellOutput, MAX_ARR_LEN);
     free(cellOutput);
   }
@@ -21,20 +21,20 @@ void merge(Cell A[], Cell B[], int *sizeA, int sizeB)
 {
   int i, j, k, origSize = *sizeA;
   Cell *temp = (Cell *)malloc((*sizeA + sizeB) * sizeof(Cell));
-  for (i = j = k = 0; i < origSize && j < sizeB;)
+  for (i = j = k = 0; i < origSize && j < sizeB; k++)
   {
-    temp[k++] = (A[i].value <= B[j].value) ? A[i++] : B[j++];
+    temp[k] = (B[j].value <= A[i].value) ? B[j++] : A[i++];
   }
 
   // remaining
-  while (i < origSize)
-  {
-    temp[k++] = A[i++];
-  }
-
   while (j < sizeB)
   {
     temp[k++] = B[j++];
+  }
+
+  while (i < origSize)
+  {
+    temp[k++] = A[i++];
   }
 
   for (i = 0; i < k; i++)
